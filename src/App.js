@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState, useReducer } from "react";
+import TodoList from "./todoList";
+import CreateTodo from "./CreateTodo";
+import appReducer from "./reducer";
+import UserBar from "./userBar";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+  const [ state, dispatch ] = useReducer(appReducer, { user: '', todos: [] });
+  
+  return (
+    <div>
+      <UserBar user={state.user} dispatch={dispatch}/>
+      {state.user && <CreateTodo dispatch={dispatch} />}
+      {state.user && <TodoList todos={state.todos} dispatch={dispatch} />}
+    </div> 
+  )
+}
+  
 export default App;
