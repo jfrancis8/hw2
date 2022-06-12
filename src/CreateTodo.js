@@ -8,7 +8,8 @@ export default function CreateTodo({dispatch}) {
     function handleTitle(evt) { setTitle(evt.target.value) }
    
     function handleCreate(evt) {
-        dispatch({ type: 'CREATE_TODO', title, desc, dateCreated:Date(Date.now()).toString(), dateCompleted: null, complete: false})
+        const addTodo = {title, description}
+        setTodos([newTodo, ...todos])
     }
     
 

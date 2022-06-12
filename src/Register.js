@@ -8,7 +8,7 @@ export default function Register({dispatch}) {
     })
   
     return (
-    <form onSubmit={(e) => {e.preventDefault(); dispatch({type:'Register',user:formData.user})}}>
+    <form onSubmit={e => {e.preventDefault();setUser(formData.username)}}>
       <label htmlFor="register-username">User:</label>
       <input type="text" value={formData.username} onChange={e => setFormData({...formData, username: e.target.value})}
         name="register-username" placeholder="Username" id="register-username" />

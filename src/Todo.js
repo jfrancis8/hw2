@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Todo({ title, description, startDate, completeDate  }) {
+export default function Todo({ title, description }) {
 
     const date = new Date().toLocaleDateString()
     const startDate = date

@@ -6,11 +6,11 @@ import Logout from "./Logout";
 
 export default function userBar({ user, dispatch }) {
     if (user) {
-        return <Logout user={user} dispatch={dispatch} />;
+        return <Logout user={user} setUser={setUser} />;
     } 
     
     else 
     {
-        return (<> <Register dispatch={dispatch} /> <Login dispatch={dispatch} /> </> );    
+        return (<> <Register setUser={setUser} /> <Login setUser={setUser} /> </> );    
     }
 }
